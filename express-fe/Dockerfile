@@ -1,2 +1,11 @@
 FROM node:16-alpine
-# TODO: Write your code here
+
+WORKDIR /usr/app/fe
+COPY package*.json ./
+
+RUN npm install
+COPY . .
+
+EXPOSE 3000
+
+CMD ["node", "server.js"]

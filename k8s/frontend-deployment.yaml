@@ -1,1 +1,22 @@
-# TODO: Your code
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: express-fe
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: express-fe
+  template:
+    metadata:
+      labels:
+        app: express-fe
+    spec:
+      containers:
+        - name: express-fe
+          image: olegmak02/express-fe:latest
+          env:
+            - name: PORT
+              value: "8085"
+            - name: BASE_URL
+              value: http://10.152.183.75:8080/api
