@@ -4,6 +4,7 @@ metadata:
   name: backend
 spec:
   type: ClusterIP
+  clusterIP: 10.152.183.75
   selector:
     app: backend
   ports:
